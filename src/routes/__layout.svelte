@@ -14,7 +14,7 @@
             <a href="/watchlist" class="navbar-item">
                 Watch List
             </a>
-            <a href= "/company"class="navbar-item">
+          <a href= "/company"class="navbar-item">
                 Create A Company
             </a>
         </div>
