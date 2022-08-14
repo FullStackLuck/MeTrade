@@ -16,6 +16,7 @@
 	"type": "module",
 	"dependencies": {
 		"@supabase/supabase-js": "^1.35.6",
+		"chart.js": "^3.9.1",
 		"dotenv": "^16.0.1",
 		"svelte-paginate": "^0.0.1"
 	}

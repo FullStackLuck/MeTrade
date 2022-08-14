@@ -1,6 +1,6 @@
 <script context="module">
     export async function load({fetch}){
-        const res = await fetch("https://financialmodelingprep.com/api/v3/quotes/crypto?apikey=aec036f3dad3a18562564d8b5efa9e19")
+        const res = await fetch("https://api.coingecko.com/api/v3/coins/list")
         
         const cryptos = await res.json()
         
@@ -28,11 +28,15 @@ export let cryptos
 
 <h1>Crypto to the moon
 </h1>
-
+<select name="" id="">
 {#each cryptos as crypto }
-<h1>{crypto.symbol}</h1>
-
+<option>{crypto.name}</option>
 {/each}
+</select>
 <style>
+    h1{
+        color: blue;
+
+    }
 
 </style>
