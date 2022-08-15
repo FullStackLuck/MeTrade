@@ -1,6 +1,7 @@
 
 <!-- Nav Bar layout -->
 <script>
+    import "../app.css";
     import {supabase} from "../supabase.js";
     import {user} from "../user_store.js";
     import login from "./login.svelte";
@@ -16,27 +17,24 @@
     }
     
 </script>
-
-<nav class="navbar is-link">
+<body>
+<nav class="flex sm:justify-center space-x-6">
     <button>
-    <a href= "/login"class="navbar-item">
+    <a href= "/login"class="text-blue-500">
         Logout
     </a></button>
 
 
-    <figure class="image is-128x128">
+    <figure class="image is-140x140">
        <a href="/"> <img src="https://i.imgur.com/n63Q1Id.png" alt="logo"></a>
       </figure>
    
         <div class="navbar-brand">
             <a href="/" class="navbar-item">
-                Complete View
-            </a>
-            <a href="/watchlist" class="navbar-item">
-                Watch List
+                Coins
             </a>
           <a href= "/company"class="navbar-item">
-                Create A Company
+                Create A Crypto
             </a>
             <a href= "/crypto"class="navbar-item">
                 Crypto
@@ -47,13 +45,10 @@
 <!-- Authentication Component (Might need to move to a single page)-->
 
 <!-- Nav component -->
-
+</body>
 
 <slot></slot>
 
 <style>
-    body{
-        background-color: black;
-    }
-
+  
 </style>

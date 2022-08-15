@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
     export async function load({fetch}){
         const res = await fetch("https://api.coingecko.com/api/v3/coins/list")
         
@@ -17,8 +17,7 @@
             error: new Error('Could not fetch crypto')
         }
     }
-
-</script>
+</script> -->
 
 
 

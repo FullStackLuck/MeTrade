@@ -65,7 +65,7 @@ const deleteStock = async (stock) =>{
     }
   };
 </script>
-<button on:click={()=> addStocks(newStock)}>Add New Company to the Stock Market</button>
+<button on:click={()=> addStocks(newStock)}>Create a Crypto Coin</button>
 {#each stocks as stock}
 <div class="card" style="display: block;">
     <div class="card-content">
@@ -106,7 +106,7 @@ const deleteStock = async (stock) =>{
 
 <style>
   .card{
-    flex-direction: left ;
+    grid-auto-columns: auto ;
     margin-top: 20px;
     background-color: #485fc7;
     width: 200px;

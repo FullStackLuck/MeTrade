@@ -1,60 +1,38 @@
-<script context="module">
-    export async function load({fetch}){
-        const res = await fetch("https://financialmodelingprep.com/api/v3/stock/list?apikey=aec036f3dad3a18562564d8b5efa9e19")
-        
-        const stocks = await res.json()
-        
-        if (res.ok){
-            return {
-                props:{
-                    stocks
-                }
-            }
-            
-        }
-        return {
-            status: res.status,
-            error: new Error('Could not fetch stock')
-        }
-    }
-
-
-
-</script>
-
-
 
 <script>
-let inputValue = " "
-console.log(inputValue)
+import {onMount} from "svelte"
+import Card from "../components/Card.svelte";
+import getCryptoData from "../api"
 
-export let stocks
-console.log(stocks)
 
-async function updateStocks(){
-    console.log(inputValue)
+
+let cryptoData = [];
+let searchValue = "";
+
+async function searchCryptoData(){
+    const res = await getCryptoData(searchValue);
+    console.log(res)
+    cryptoData = res.data;
 }
 
 
+ onMount(async ()=> {
+    const res = await getCryptoData()
+    console.log(res)
+    cryptoData = res.data;
 
+ });
 </script>
-<slot/>
-<nav>
-
-</nav>
-
-<select class="select" name="" id="">
-    {#each stocks as stock}
-   <option value="">
-   <h1>{stock.name}</h1>
-    {stock.price}
-   </option>
-    {/each}
-</select>
 
 
-<style>
-    .select{
-        display:flex
-    }
-</style>
+<center>
+<h1 class="text-3xl font-bold underline">
+        To the Moon!
+      </h1>
+<input bind:value="{searchValue}" placeholder="Seach Coins" class="border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"/>
+<button on:click= {searchCryptoData}>Coins</button>
+{#each cryptoData as crypto }
+<Card data={crypto}/>
+{/each}
+</center>
+
