@@ -17,15 +17,15 @@
     }
     
 </script>
-<body>
-<nav class="flex sm:justify-center space-x-6">
+
+<!-- <nav class="flex sm:justify-center space-x-6">
     <button>
     <a href= "/login"class="text-blue-500">
         Logout
     </a></button>
 
 
-    <figure class="image is-140x140">
+    <figure class="image is-128x128">
        <a href="/"> <img src="https://i.imgur.com/n63Q1Id.png" alt="logo"></a>
       </figure>
    
@@ -34,18 +34,16 @@
                 Coins
             </a>
           <a href= "/company"class="navbar-item">
-                Create A Crypto
+                NFT Lab
             </a>
-            <a href= "/crypto"class="navbar-item">
-                Crypto
-            </a>
-            
         </div>
-</nav>
+</nav> -->
 <!-- Authentication Component (Might need to move to a single page)-->
 
 <!-- Nav component -->
-</body>
+<footer>
+    Data taken from CoinApi
+</footer>
 
 <slot></slot>
 

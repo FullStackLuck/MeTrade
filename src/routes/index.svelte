@@ -23,7 +23,26 @@ async function searchCryptoData(){
 
  });
 </script>
+<nav class="flex sm:justify-center space-x-6">
+    <button>
+    <a href= "/login"class="text-blue-500">
+        Logout
+    </a></button>
 
+
+    <figure class="image is-128x128">
+       <a href="/"> <img src="https://i.imgur.com/n63Q1Id.png" alt="logo"></a>
+      </figure>
+   
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item">
+                Coins
+            </a>
+          <a href= "/company"class="navbar-item">
+                NFT Lab
+            </a>
+        </div>
+</nav>
 
 <center>
 <h1 class="text-3xl font-bold underline">
