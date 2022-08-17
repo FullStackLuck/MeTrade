@@ -21,8 +21,8 @@ export let data
       <tr>
         <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200...">{data.name}</td>
         <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200...">{data.symbol}</td>
-        <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200...">${data.priceUsd*10}</td>
-        <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200...">{Math.round(data.supply)*10}</td>
+        <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200...">${(Math.round(data.priceUsd * 1000)/1000).toFixed(3)}</td>
+        <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200...">{data.supply * 100}</td>
         <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200... ">{data.rank}</td>
         <td class="text-gray-800 transition ease-in-out delay-150 bg-black-600 hover:-translate-y-3 hover:scale-130 hover:bg-green-500 duration-200... ">{data.changePercent24Hr}</td>
       </tr>

@@ -23,7 +23,7 @@ async function searchCryptoData(){
 
  });
 </script>
-<nav class="flex sm:justify-center space-x-6">
+<nav class="-m-20 mt-3 pb- -70 flex sm:justify-center space-x-6">
     <button>
     <a href= "/login"class="text-blue-500">
         Logout
@@ -38,16 +38,19 @@ async function searchCryptoData(){
             <a href="/" class="navbar-item">
                 Coins
             </a>
-          <a href= "/company"class="navbar-item">
+          <a href= "/nft"class="navbar-item">
                 NFT Lab
             </a>
         </div>
 </nav>
 
-<center>
+<center class=" p-20 pb-20">
 <h1 class="text-3xl font-bold underline">
         To the Moon!
       </h1>
+      <div>
+        <img class="h-20 "src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/rocket.png" alt="">
+      </div>
 <input bind:value="{searchValue}" placeholder="Seach Coins" class="border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"/>
 <button on:click= {searchCryptoData}>Coins</button>
 {#each cryptoData as crypto }

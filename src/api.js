@@ -15,7 +15,3 @@ export default async function getCryptoData(query = null){
     return res.data
 
 }
-
-
-    
-// 3e459b8e-9ee8-4fb5-a341-f954cf3627a1

@@ -3,7 +3,7 @@
 <script>
     import "../app.css";
     import {supabase} from "../supabase.js";
-    import {user} from "../user_store.js";
+    import {user} from "../user_store";
     import login from "./login.svelte";
     console.log(supabase)
     supabase

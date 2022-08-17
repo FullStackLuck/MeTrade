@@ -5,7 +5,7 @@ import {user} from "../user_store";
 
 
 
-let email =""
+let email =" "
 
 
     const signup = async ()=>{
@@ -23,7 +23,7 @@ let email =""
             password: 'lFBostYZdhMEFmiBnNQe'
         })
         $user = userDetails
-        if ($user === userDetails){
+        if (user){
             goto('/')
         }
         else{
@@ -43,9 +43,9 @@ let email =""
       <button on:click = {signup} class="bg-blue hover:bg-blue-dark text-black font-bold px-4 rounded" type="button">
         Sign Up
       </button>
-      <button on:click = {login} class="bg-blue hover:bg-blue-dark text-black font-bold py-2 px-4 rounded" type="button">
+      <!-- <button on:click = {login} class="bg-blue hover:bg-blue-dark text-black font-bold py-2 px-4 rounded" type="button">
         Sign In
-      </button>
+      </button> -->
     </div>
 </div>
 
@@ -59,6 +59,4 @@ let email =""
         text-align: center;
 
     }
-
-    
 </style>

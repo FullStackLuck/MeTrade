@@ -13,6 +13,7 @@ let  avatar, fileinput;
                 try {
                   let {data, error } = await supabase.from('stocks').select('*')
                   stocks = data;
+                  console.log(stocks)
         } catch (err){
       console.log(err)
     }
@@ -27,7 +28,7 @@ let  avatar, fileinput;
             };
           }
   // Add a new stock entry to list
-            const addStocks = async (stock)=>{
+  const addStocks = async (stock)=>{
                 try {
             const { data, error } = await supabase
               .from('stocks')
@@ -73,7 +74,7 @@ const deleteStock = async (stock) =>{
     }
   };
 </script>
-<nav class="flex sm:justify-center space-x-6">
+<nav class="grid sm:justify-center space-x-3">
   <button>
   <a href= "/login"class="text-blue-500">
       Logout
@@ -87,7 +88,7 @@ const deleteStock = async (stock) =>{
           <a href="/" class="navbar-item">
               Coins
           </a>
-        <a href= "/company"class="navbar-item">
+        <a href= "/nft"class="navbar-item">
               NFT Lab
           </a>
       </div>
@@ -102,6 +103,8 @@ const deleteStock = async (stock) =>{
             stock.company = e.currentTarget.value
             updateStock(stock)
   }}>
+
+
   <div id="app">
         {#if avatar}
         <img class="avatar" src="{avatar}" alt="d" />
@@ -124,7 +127,7 @@ const deleteStock = async (stock) =>{
               stock.sector = e.currentTarget.value
               updateStock(stock)
               }}>
-      <input type="text" style="display: block;"  value={stock.price}
+      <!-- <input type="text" style="display: block;"  value={stock.price}
         on:input={(e)=>{
           stock.sector = e.currentTarget.value
           updateStock(stock)
@@ -134,7 +137,7 @@ const deleteStock = async (stock) =>{
             on:input={(e)=>{
             stock.exchange = e.currentTarget.value
               updateStock(stock)    
-  }}/>
+  }}/> -->
   </div>
 </div>
 <button class="" on:click={()=>deleteStock(stock) }>Remove</button>
