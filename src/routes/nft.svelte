@@ -126,7 +126,7 @@ const deleteNft = async (nft) =>{
 
 
 {#each nft as crypto}
-    <div class="grid m-3 max-w-sm text-center w-(40) bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-100 dark:border-gray-100">
+    <div class="grid m-3 max-w-sm text-center w-(40) bg-white rounded-lg border border-blue-200 shadow-md dark:bg-blue-300 dark:border-gray-100">
     {#if path}
   <img
     {src}
