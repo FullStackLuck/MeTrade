@@ -3,11 +3,9 @@ import {user} from "../user_store"
 
 
         const logOut = async()=>{
-
             let { error } = await supabase.auth.signOut();
             $user = false;
             goto("/login")
-
 }
 
 

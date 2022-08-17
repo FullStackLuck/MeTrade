@@ -16,18 +16,6 @@ export let size = '10em'
 
   const dispatch = createEventDispatcher()
 
-//   function downloadImage() {
-//     supabase.storage
-//       .from('nft-bucket')
-//       .download(path)
-//       .then(({ data, error }) => {
-//         if (error) throw error
-//         src = URL.createObjectURL(data)
-//       })
-//       .catch((error) =>
-//         console.error('Error downloading image: ', error.message)
-//       )
-//   }
 
   async function uploadAvatar() {
     try {
@@ -125,7 +113,7 @@ const deleteNft = async (nft) =>{
             <a href="/" class="navbar-item">
                 Coins
             </a>
-          <a href= "/company"class="navbar-item">
+          <a href= "/nft"class="navbar-item">
                 NFT Lab
             </a>
         </div>
@@ -139,7 +127,6 @@ const deleteNft = async (nft) =>{
 
 {#each nft as crypto}
     <div class="grid m-3 max-w-sm text-center w-(40) bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-100 dark:border-gray-100">
-       <!-- Image holder -->
     {#if path}
   <img
     {src}
@@ -181,8 +168,7 @@ const deleteNft = async (nft) =>{
                 crypto.price = e.currentTarget.value;
                 updateNft(crypto)
                 
-                }}
-                
+                }}            
                 />
         </div>
         <button>Update</button>
