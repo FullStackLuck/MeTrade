@@ -29,10 +29,10 @@ async function searchCryptoData(){
  });
 </script>
 <nav class="-m-20 mt-3 pb- -70 flex sm:justify-center space-x-6">
-    <button>
+    <!-- <button>
     <a href= "/login"class="text-blue-500">
         Logout
-    </a></button>
+    </a></button> -->
 
 
     <figure class="image is-128x128">
