@@ -51,4 +51,5 @@ Ethereum Pric - 0.00
 1. More functionality with crypto table, real-time data updates
 2. Make the NFT Generator a market place where you can list a created NFT
 3. Authentication with Supabase
+4. Add Chart.Js to show relative data.
 

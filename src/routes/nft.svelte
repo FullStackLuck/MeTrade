@@ -5,18 +5,17 @@ import { createEventDispatcher } from 'svelte'
 
     let nft = [];
     let newNft = " "
-   
-//Image uploader
+
 export let path
 export let size = '10em'
 
   let uploading = false
   let src
-  let files
+  let files,fileInput
 
   const dispatch = createEventDispatcher()
 
-
+//Upload image 2
   async function uploadAvatar() {
     try {
       uploading = true
@@ -29,7 +28,7 @@ export let size = '10em'
       const fileExt = file.name.split('.').pop()
       const fileName = `${Math.random()}.${fileExt}`
       const filePath = `${fileName}`
-
+      console.log(file)
       let { error: uploadError } = await supabase.storage
         .from('nft-bucket')
         .upload(filePath, file)
@@ -95,9 +94,6 @@ const deleteNft = async (nft) =>{
 </script>
 <main>
     <h1 class="mb-3 text-2xl font-bold text-center text-black-800 md:text-3xl">NFT LAB</h1>
-    <div>
-        <input type="text-center" name="" id="">
-    </div>
 </main>
 <nav class="-m-20 -mb-5 mt-3 flex sm:justify-center space-x-3">
     <button>
@@ -119,18 +115,25 @@ const deleteNft = async (nft) =>{
         </div>
   </nav>
   <div class="">
-    <input type="text" bind:value={newNft}>
+    <!-- <input type="text" bind:value={newNft}> -->
     <button on:click={()=> addNewNft(newNft)}>Create NFT</button>
-
   </div>
-
-
 {#each nft as crypto}
-    <div class="grid m-3 max-w-sm text-center w-(40) bg-white rounded-lg border border-blue-200 shadow-md dark:bg-blue-300 dark:border-gray-100">
-    {#if path}
+    <div class="content-center place-items-center grid m-3 max-w-sm text-center w-(40) bg-white rounded-lg border border-blue-200 shadow-md dark:bg-blue-300 dark:border-gray-100">
+
+      <div class="container">
+        <!-- {#if avatar}
+        <img id="avatar" src={avatar} alt="avatar"/>
+    {:else}
+        <img id="avatar" src="avatar.png" alt="avatar"/>
+      {/if} -->
+        <input class="hidden" id="file-to-upload" type="file" accept=".png,.jpeg" bind:this={fileInput} />
+        <button class="upload-btn" on:click={ () => fileInput.click() }>Upload</button>  
+    </div>
+      {#if path}
   <img
     {src}
-    alt="Avatar"
+    alt=""
     class="avatar image"
     style="height: {size}; width: {size};"
   />
@@ -146,7 +149,7 @@ const deleteNft = async (nft) =>{
       style="visibility: hidden; position:absolute;"
       type="file"
       id="single"
-      accept="image/*"
+      accept="images/*"
       bind:files
       on:change="{uploadAvatar}"
       disabled="{uploading}"
